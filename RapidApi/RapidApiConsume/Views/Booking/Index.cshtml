@@ -1,0 +1,22 @@
+﻿@model List<BookingApiViewModel.Result>
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+<div class="container">
+	<br />
+	<table class="table table-bordered">
+		<tr>
+			<th>Otel Adı</th>
+			<th>Otel Puanı</th>
+			<th>Otel Detayları</th>
+		</tr>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<th>@item.hotel_name</th>
+				<td>@item.review_score</td>
+				<td><a href="" class="btn btn-dark">Detaylar</a</td>
+			</tr>
+		}
+	</table>
+</div>

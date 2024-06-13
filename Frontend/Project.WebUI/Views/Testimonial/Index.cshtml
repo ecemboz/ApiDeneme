@@ -1,0 +1,45 @@
+﻿@model List<TestimonialViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="col-lg-6 mx-auto">
+    <div class="card">
+        <div class="card-body">
+            <a href="/Testimonial/AddTestimonial/" class="btn btn-primary float-right">Yeni Referans Girişi</a>
+            <div><br /></div>
+            <div><br /></div>
+            <h4 class="card-title">REFERANS LİSTESİ</h4>
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped verticle-middle">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Referans Adı</th>
+                            <th scope="col">Referans Unvan</th>
+                            <th scope="col">İŞLEMLER</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.TestimonialID</td>
+                                <td>@item.Name</td>
+                                <td>@item.Title</td>
+                                <td>
+                                    <span>
+                                        <a href="/Testimonial/UpdateTestimonial/@item.TestimonialID" data-toggle="tooltip" data-placement="top" class="btn btn-outline-info"><i class="fa fa-edit"></i> Güncelle</a>
+                                        <a href="/Testimonial/DeleteTestimonial/@item.TestimonialID" data-toggle="tooltip" data-placement="top" class="btn btn-outline-danger"><i class="fa fa-times"></i> Sil</a>
+                                    </span>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
